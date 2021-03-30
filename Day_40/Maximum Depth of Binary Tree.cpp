@@ -1,0 +1,19 @@
+// Code:
+
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if(root == NULL)
+          return 0;
+      int left = maxDepth(root -> left);
+      int right = maxDepth(root -> right);
+      int h;
+      if(left > right){
+        h = 1 + left;
+      }
+      else{
+        h = 1 + right;
+      }
+      return h;
+    }
+};
